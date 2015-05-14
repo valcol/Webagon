@@ -25,6 +25,7 @@ var keyboard = new THREEx.KeyboardState();
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+THREEx.WindowResize(renderer, camera);
 
 var playing = false;
 
@@ -142,7 +143,7 @@ function setupScene() {
     fastrotate_level_delay = 380;
     rotate_level_speed = 2;
     fastrotate_level_speed = 6;
-    pattern_duration = 900;
+    pattern_duration = 450;
     current_pattern = 1;
     current_obstacle_position = 1;
 
