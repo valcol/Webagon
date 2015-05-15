@@ -147,8 +147,6 @@ function setupScene() {
     pattern_duration = 450;
     current_pattern = 1;
     current_obstacle_position = 1;
-
-    rotateEuler(player, 0.0.1, "Z");
     
     scene.add(player);
     scene.add(hexagon);
@@ -443,7 +441,7 @@ function moveBlocs(speed_percent) {
     var dir = new THREE.Vector3().subVectors(vector, or).normalize();
 
 
-    //Update the picking ray with the camera and mouse position	
+    //Update the picking ray
     raycaster.set(or, dir);
 
 
@@ -488,8 +486,7 @@ var render = function() {
         if (keyboard.pressed("right")) {
             rotateEuler(player, -0.15, "Z");
         }
-
-
+        
         if (frames % spawn_obstacle_delay == 0) {
             followPattern();
         }
@@ -509,6 +506,8 @@ var render = function() {
        
 
     }
+    else
+        rotateEuler(player, -0.05, "Z");
     
      renderer.render(scene, camera);
 };
