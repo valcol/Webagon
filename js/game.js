@@ -107,7 +107,8 @@ player.geometry.vertices[1].x = player.geometry.vertices[1].x - 2;
 player.geometry.vertices[4].x = player.geometry.vertices[6].x + 2;
 player.geometry.vertices[5].x = player.geometry.vertices[6].x + 2;
 player.geometry.verticesNeedUpdate = true;
-player.position.y = 0;
+player.position.z = 0;
+player.position.x = 0;
 player.position.y = 20;
 
 
@@ -147,6 +148,8 @@ function setupScene() {
     current_pattern = 1;
     current_obstacle_position = 1;
 
+    rotateEuler(player, 0.0.1, "Z");
+    
     scene.add(player);
     scene.add(hexagon);
     generateBackground();
